@@ -45,7 +45,7 @@
 				var player = null, comida = null;
 				var puntos = 0;
 				var walls = new Array();
-				var gameOver=false;
+				var victoria=false;
 				var player_body = new Image(), food_img = new Image();
 				var crunch = new Audio(), fondo = new Audio(), s_pausa = new Audio();
 
@@ -104,6 +104,13 @@
 				walls[i].paint(ctx)
 			}
 
+                  if(victoria == true){
+                        ctx.fillStyle = "white";
+                        ctx.textAlign = "center";
+                        ctx.font = "18px Arial";
+                        ctx.fillText("victoria", 240,298);
+                  }
+
 		}
 
 
@@ -115,6 +122,8 @@
 			
 			if (player.intersects(comida)) {
 				crunch.play();
+                        victoria = true;
+                        setTimeout('init()',2000);
 				player = new Rectangle(x,y,10,10,"#00FF00")
 				
 			}
@@ -420,8 +429,10 @@
 
 
             gameOver = false;
+            victoria = false;
             direccion = derecha;
             puntaje=0;
+
             //speed = 2;
 
 			run();
