@@ -123,8 +123,8 @@
 			if (player.intersects(comida)) {
 				crunch.play();
                         victoria = true;
+                        player = new Rectangle(x,y,10,10,"#00FF00");
                         setTimeout('init()',2000);
-				player = new Rectangle(x,y,10,10,"#00FF00")
 				
 			}
 
@@ -184,7 +184,7 @@
 
             walls.push(new Rectangle(98,395,7,50,"#2168B8"));
             walls.push(new Rectangle(5,390,100,7,"#2168B8"));  
-            walls.push(new Rectangle(49,440,7,55,"#2168B8")); 
+            walls.push(new Rectangle(49,445,7,50,"#2168B8")); 
             walls.push(new Rectangle(75,472,7,25,"#2168B8")); 
             walls.push(new Rectangle(75,470,53,7,"#2168B8")); 
             walls.push(new Rectangle(125,422,7,55,"#2168B8")); 
